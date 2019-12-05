@@ -1,0 +1,232 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url(../images/background.png);
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.tm-header{
+    background: black;
+    display: block;
+    padding: 20px;
+}
+
+.tm-logo{
+    align-content: center;
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+}
+
+.tm-nav{
+    max-width: 95%;
+    border: 2px solid #3a382e;
+    border-radius: 25px;
+    display: block;
+    margin: 3px;
+}
+
+.tm-nav  div ul li{
+    display:inline-block;  
+} 
+
+/* for table in header */
+.tm-nav div ul li a{
+    font-size: 20px;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: #fff;
+    line-height: 50px;
+    font-family: 'Tomorrow', sans-serif;
+}
+
+
+/*container for search */
+.Search-container {
+  margin-top: 50px;
+  padding-bottom: 50px;
+  z-index: 2;
+  position: fixed;
+  left: 0.5px;
+  right: 0.5px;
+  width: 350px;
+  background-color: grey;
+  opacity: 0.85;
+  font-family: Impact;
+  border-radius: 5px;
+}
+
+
+
+.image {
+  background: url(../images/background.png);
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  
+}
+
+
+
+.tm-nav li a:hover {
+  background-color:  #ff9980;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+
+.tm-nav li a.active {
+  background-color: #ff5c33;
+  border-radius: 25px;
+  color: black;
+}
+
+/*header ends here and sections start*/
+
+/* place */
+
+
+.tm-place:focus {
+    outline: none;
+}
+.tm-place a:focus {
+    outline: none;
+}
+
+.tm-place{
+    display: block;
+    background: #353535;
+    max-width: 33.33%;
+    width: 33.33%;
+}
+
+
+.tm-place img{
+    max-width: 100%;
+    width: 100%;
+}
+
+
+
+.tm-place p{
+    font-size: 1.5vw;
+    color: #fff;
+    text-align: center;
+padding: 5%;
+
+  
+}
+
+.tm-place a{
+    text-decoration: none;
+}
+
+.tm-place a p:hover{
+    color: #ec3c6a;
+
+
+}
+
+
+.s{
+    padding-bottom: 1%;
+}
+
+.flex{
+    display: flex;
+}
+
+.search-flight{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/flight.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    margin-bottom: 70px;
+    font-size: 55px;
+    font-family: 'Indie Flower', cursive;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #C0C0C0;
+}
+.search-field{
+    height: 50px;
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+}
+.search-btn{
+    height: 50px;
+    width: 150px;
+    background: #C0C0C0;
+    border: none;
+    color: #000;
+    border-radius: 25px;
+}
+.search-btn:hover{
+    background: #808080;
+    cursor: pointer;
+}
+.form-box{
+    background: rgba(0,0,0,0.5);
+    padding: 30px;
+}
+
+.search-hotel{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/hotel.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.signin-navbar{
+    width: 100%;
+    height: 70px;
+    background-color: black;
+}
+.signin-navbar ul{
+    width: auto;
+    float:right;
+    margin-top: 8px;
+    margin-right: 10px;
+}
+.signin-navbar ul li {
+    display: inline-block;
+    padding: 10px 10px;
+}
+.signin-navbar ul li a{
+    color: #C0C0C0;
+    font-family: 'Solway', serif;
+}
