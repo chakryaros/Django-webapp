@@ -11,9 +11,9 @@ def index(request):
 
     return render(request,'index.html')
 
-def signin(request):
+def login(request):
     #rooms = Roomtype.objects.all()
-    return render(request,'signin.html')
+    return render(request,'login.html')
 
 def flight(request):
     #rooms = Roomtype.objects.all()
@@ -22,6 +22,10 @@ def flight(request):
 def hotel(request):
     #rooms = Roomtype.objects.all()
     return render(request,'hotel.html')
+
+def contact(request):
+    #rooms = Roomtype.objects.all()
+    return render(request,'contact.html')
 
 # def RoomType(request):
 #     rooms = Roomtype.objects.all()
@@ -40,4 +44,18 @@ def signup(request):
     else:
         form=UserCreationForm()
         return render(request,'signup.html',{'form':form})
+
+def home(request):
+
+    return render(request,'home.html')
+
+
+def add(request):
+    val1 = int(request.POST["num1"])
+    val2 = int(request.POST["num2"])
+    res = val1 + val2
+    return render(request, 'result.html', {'result' : res})
+
+
+
 

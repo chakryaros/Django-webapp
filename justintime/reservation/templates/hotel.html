@@ -1,42 +1,6 @@
-<!doctype html>
-{% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title> JustInTime</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Solway|Tomorrow&display=swap" rel="stylesheet">
-
-
-</head>
-<body>
-    <nav class="signin-navbar">
-        <ul>
-            <li><a href="login.html">Sign In</a></li>
-            <li><a href="register.html">Register</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-    </nav>
-
-    <header class="tm-header">
-            <img class="tm-logo" src= "{% static 'images/logo.png'%}" alt="JustInTime">
-    
-            <nav class="tm-nav" >
-                <div class="container-fluid">
-                <ul>
-                    <li><a href="{% url 'index' %}">Home</a></li>
-                    <li ><a href="{% url 'flight' %}">Flight </a></li>
-                    <li><a class="active" href="{% url 'hotel' %}">Hotel</a></li>
-                </ul>  
-                </div>  
-            </nav>
-    </header>
-
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
     <div class="search-hotel">
         <form>
             <h1> Hotel </h1>
@@ -50,6 +14,5 @@
         </form>
     </div>
 
-</body>
-</html>
 
+{% endblock %}
