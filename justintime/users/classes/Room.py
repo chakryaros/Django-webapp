@@ -4,10 +4,12 @@ class Room():
 
     def __init__(self):
         self.price = 0
-        self.description = ""
+        self.location= ""
+        self.h_name = ""
+        self.des = ""
 
     def showRoom(self):
-        return self.description
+        return self.location + "-" + self.h_name + "-" + self.des
 
     @abc.abstractmethod
     def getPrice(self):
@@ -15,8 +17,10 @@ class Room():
 
 class DeluxRoom(Room):
     
-    def __init__(self,d):
-        self.description = d
+    def __init__(self,l,n,d):
+        self.location = l
+        self.h_name = n
+        self.des = d
 
     def getPrice(self):
         if "King" in self.description:
@@ -28,16 +32,20 @@ class DeluxRoom(Room):
 
 class DoubleRoom(Room):
 
-    def __init__(self,d):
-        self.description = d
+    def __init__(self,l,n,d):
+        self.location = l
+        self.h_name = n
+        self.des = d
     
     def getPrice(self):
         return 109.99
 
 class SingleRoom(Room):
 
-    def __init__(self,d):
-        self.description = d
+    def __init__(self,l,n,d):
+        self.location = l
+        self.h_name = n
+        self.des = d
 
     def getPrice(self):
         return 89.99

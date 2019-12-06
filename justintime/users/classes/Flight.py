@@ -4,10 +4,13 @@ class Flight():
 
     def __init__(self):
         self.price = 0
-        self.description = "Unknown Flight"
+        self.flightnum = ""
+        self.dep = ""
+        self.des = ""
+        self.date = ""
 
     def showFlight(self):
-        return self.description
+        return self.flightnum + " " + self.dep + "-" + self.des + " " + self.date
 
     @abc.abstractmethod
     def getPrice(self):
@@ -15,16 +18,22 @@ class Flight():
 
 class EconomicClass(Flight):
 
-    def __init__(self,d):
-        self.description = d + ", Economic Class"
+    def __init__(self,f,dep,des,d):
+        self.flightnum = f
+        self.dep = dep
+        self.des = des
+        self.date = d + ", Economic Class"
     
     def getPrice(self):
         return 139.99
 
 class FirstClass(Flight):
 
-    def __init__(self,d):
-        self.description = d + ", First Class"
+    def __init__(self,f,dep,des,d):
+        self.flightnum = f
+        self.dep = dep
+        self.des = des
+        self.date = d + ", First Class"
 
     def getPrice(self):
         return 329.99

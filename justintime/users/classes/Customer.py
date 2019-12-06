@@ -15,12 +15,12 @@ class Customer():
     
     def addRoomReservation(self,r):
         self.roomReservation.append(r)
-        self.system.subject_state(r.showRoom())
+        self.system.subject_state(self.getName() + " Just Booked: " + r.showRoom() + " Price = $" + str(r.getPrice()))
         self.system.removeRoom(r)
 
     def addFlightReservation(self,f):
         self.flightReservation.append(f)
-        self.system.subject_state(f.showFlight())
+        self.system.subject_state(self.getName() + " Just Booked: " + f.showFlight() + " Price = $" + str(f.getPrice()))
         self.system.removeFlight(f)
     
     def getReservations(self):

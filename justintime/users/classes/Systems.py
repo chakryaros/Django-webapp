@@ -11,6 +11,9 @@ class LocalSystem():
         self.customers = c
         self.current_customer = None
 
+        for cs in self.customers:
+            cs.system = self
+
     def addFlight(self,f):
         self.flights.append(f)
         print(f.showFlight() + " Is Now Available For Booking!")
@@ -41,12 +44,27 @@ class LocalSystem():
             print(c.getName() + " " + c.getEmail())
 
     def getFlights(self):
+        print("Flights Available: ")
         for f in self.flights:
             print(f.showFlight())
+        
+        return self.flights
+            
 
     def getRooms(self):
+        print("Rooms Available: ")
         for r in self.rooms:
             print(r.showRoom())
+
+    def searchRoom(self,loc,n):
+        for r in self.rooms:
+            if loc in r.showRoom() and n in r.showRoom():
+                return r
+
+    def searchRoom(self,dep,des,date):
+        for f in self.flights:
+            if dep + "-" + des in f.showFlight() and date in f.showFlight():
+                return f
 
     # Observer Pattern
     def attach(self,observer):
@@ -87,4 +105,4 @@ class SystemManager(Observer):
 
     def update(self, arg):
         self._observer_state = arg
-        print("In Observer: " + self._subject.get_state())
+        print(self._subject.get_state())
