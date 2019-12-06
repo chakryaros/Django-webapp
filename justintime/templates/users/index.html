@@ -1,7 +1,13 @@
-{% extends 'base.html'%}
+{% extends "users/base.html" %}
 {% load static %}
 {% block content %}
-    <h2><center> Where do you want to visit?</center></h2>
+
+    {% if user.is_authenticated %}
+        <h2>Hello {{ user.username }}</h2>
+   
+    {% endif %}
+ 
+<h2><center> Where do you want to visit?</center></h2>
      
      <section class="slider room flex">
 
