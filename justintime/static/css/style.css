@@ -87,21 +87,6 @@ body, html {
   
 }
 
-
-
-.tm-nav li a:hover {
-  background-color:  #ff9980;
-  border-radius: 25px;
-  cursor: pointer;
-}
-
-
-.tm-nav li a.active {
-  background-color: #ff5c33;
-  border-radius: 25px;
-  color: black;
-}
-
 /*header ends here and sections start*/
 
 /* place */
@@ -229,4 +214,14 @@ h1{
 .signin-navbar ul li a{
     color: #C0C0C0;
     font-family: 'Solway', serif;
+}
+
+.hello{
+    margin-bottom: 50px;
+    margin-top: 50px;
+    font-size: 25px;
+    font-family: 'Solway', serif;
+    letter-spacing: 2px;
+    text-align: left;
+    color: rgb(5, 5, 5);
 }

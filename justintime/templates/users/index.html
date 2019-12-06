@@ -3,7 +3,7 @@
 {% block content %}
 
     {% if user.is_authenticated %}
-        <h2>Hello {{ user.username }}</h2>
+        <h2 class="hello">Hello User {{ user.username }}</h2>
    
     {% endif %}
  
@@ -36,7 +36,7 @@
                 
     </section>
 
-    <center><h2> Where do you want to stay?</h2></center>
+    <h2><center>Where do you want to stay?</center></h2>
      
      <section class="slider room flex">
 
