@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Results</h1>
+<h2>{{ db.first.city }}</h2>
+<h2>{{ db.first.name }}</h2>
+<h2>{{ db.first.description }}</h2>
+  <table class="table">
+        <tbody>
+            {% for h in db %}
+              <tr>
+
+                <td>{{h.city}}</td>
+                <td>{{h.name}}</td>
+                  <td>{{ h.type }}</td>
+                  <td>{{ h.beds }}</td>
+                  <td>{{ h.price }}</td>
+                {% if h.booker %}
+                    <td>reserved</td>
+                {% else %}
+                    <td><a href="/hotel/book/{{ h.id }}">Book Now</a></td>
+                {% endif %}
+              </tr>
+            {% endfor %}
+        </tbody>
+  </table>
+    
+
+{% endblock %}

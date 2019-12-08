@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+{% block content %}
+    <div class="search-hotel">
+
+        <form action="{% url 'hotel:search' %}" method="POST">
+              <h1> Hotel </h1>
+            {% csrf_token %}
+            
+            <div class="form-box">
+                <input id="city" type="text" class="search-field stay" name="city" placeholder="where to stay" >
+                <input id="city" type="text" class="search-field checkout" name="name" placeholder="hotel name" >
+                {% comment %}<input type="text" class="search-field stay" name="where_to_stay" placeholder="where to stay">
+                <input type="text" class="search-field checkout" name="hotel_name", placeholder="hotel name">{% endcomment %}
+                <!-- <input type="text" class="search-field checkin_time" placeholder="Check in Date: mm/dd/yyyy">
+                <input type="text" class="search-field checkout_time" placeholder="Check out Date: mm/dd/yyyy"> -->
+                <button class="search-btn" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+
+  <table class="table">
+        <tbody>
+            {% for h in db %}
+              <tr>
+
+                <td>{{h.city}}</td>
+                <td>{{h.name}}</td>
+                <td><a href="/hotel/booking/{{ h.city }}/{{ h.name }}">Enter</a></td>
+
+              </tr>
+            {% endfor %}
+        </tbody>
+  </table>
+    
+
+{% endblock %}
+<!-- <form action="add" method="POST">
+        
+        Enter 1st number : <input type="text" name="num1"><br>
+
+        Enter 2nd number : <input type="text" name="num2"><br>
+
+        <button type="submit">Sign up</button>
+
+    </form> -->

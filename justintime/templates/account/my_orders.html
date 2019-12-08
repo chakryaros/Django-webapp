@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>My Orders</h1>
+
+    <h2>Hotel Orders</h2>
+  <table class="table">
+        <tbody>
+            {% for h in room_db %}
+              <tr>
+
+                <td>{{h.city}}</td>
+                <td>{{h.name}}</td>
+                  <td>{{ h.type }}</td>
+                  <td>{{ h.beds }}</td>
+                  <td>{{ h.price }}</td>
+                <td><a href="/hotel/cancel/{{ h.id }}">Cancel</a></td>
+              </tr>
+            {% endfor %}
+        </tbody>
+  </table>
+
+    <br><br><br>
+
+    <h2>Flight Orders</h2>
+
+
+{% endblock %}

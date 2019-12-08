@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    {% if user.is_authenticated %}
+        <h2 class="hello">Hello User: {{ user.username }}</h2>
+   
+    {% endif %}
+ 
+<h2><center> Where do you want to visit?</center></h2>
+     
+     <section class="slider room flex">
+
+      
+                    <div class="tm-place">
+                        <img  src= "{% static 'images/rocky.jpeg' %}">
+                       <a href=""> <p class="s">Rocky Mountain</p> </a>
+
+                    </div>
+                        <div class="tm-place">
+                        <img  src= "{% static 'images/zion.jpeg' %}">
+                            <a href=""> <p class="s">Zion National Park</p></a>
+
+                    </div>
+                        <div class="tm-place">
+                        <img  src= "{% static 'images/gc.jpeg' %}">
+                            <a href="">  <p class="s">Grand Canyon</p></a>
+
+                    </div>
+                    </div>
+                        <div class="tm-place">
+                        <img  src= "{% static 'images/yellow.jpg' %}">
+                        <a href="">  <p class="s">Yellowstone</p></a>
+
+                    </div>
+                
+    </section>
+
+    <h2><center>Where do you want to stay?</center></h2>
+     
+     <section class="slider room flex">
+
+      
+                    <div class="tm-place">
+                        <img  src= "{% static 'images/classic.jpg' %}">
+                       <a href=""> <p class="s">Classic Hotel</p> </a>
+
+                    </div>
+                        <div class="tm-place">
+                       <!--  <img  src="images/davison.jpg"> -->
+                       <img  src= "{% static 'images/davison.jpg' %}">
+                            <a href=""> <p class="s">Davision Hotel</p></a>
+
+                    </div>
+                        <div class="tm-place">
+                        <img  src= "{% static 'images/hardrock.jpg' %}">
+                            <a href="">  <p class="s">HardRock Hotel</p></a>
+
+                    </div>
+                    </div>
+                        <div class="tm-place">
+                        <img  src= "{% static 'images/hilton.jpg' %}">
+                        <a href="">  <p class="s">Hilton Hotel</p></a>
+
+                    </div>
+               
+    </section>
+
+{% endblock %}
