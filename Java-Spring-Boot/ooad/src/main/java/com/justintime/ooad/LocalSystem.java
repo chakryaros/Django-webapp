@@ -1,0 +1,108 @@
+package com.justintime.ooad;
+
+import java.util.ArrayList;
+import java.util.Observable;
+
+public class LocalSystem extends Observable {
+    
+    private ArrayList<Flight> flights = new ArrayList<Flight>();
+    private ArrayList<Room> rooms = new ArrayList<Room>();
+    private ArrayList<customer> customers = new ArrayList<customer>();
+    public customer current_customer;
+    private String reservationState;
+
+    public LocalSystem(ArrayList<Flight> flights, ArrayList<Room> rooms, ArrayList<customer> customers) {
+        this.flights = flights;
+        this.rooms = rooms;
+        this.customers = customers;
+        this.reservationState = "Unknown Reservation";
+    }
+
+    public void addFlight(Flight f) {
+        flights.add(f);
+        System.out.println("A Flight is Added To The System.");
+    }
+
+    public void addRoom(Room r) {
+        rooms.add(r);
+        System.out.println("A Room is Added To The System.");
+    }
+
+    public void searchFlight(String dep, String des, String dep_time, String return_time) {
+        String for_trip = dep + "-" + des + " " + dep_time;
+        String back_trip = des + "-" + dep + " " + return_time;
+        for (int i = 0; i < flights.size(); i++) {
+            if (flights.get(i).showFlight().contains(for_trip) || flights.get(i).showFlight().contains(back_trip)) {
+                System.out.println(flights.get(i).showFlight());
+            }
+        }
+    }
+
+    public void searchRoom(String Location, String Type) {
+        for (int i = 0; i < rooms.size(); i++) {
+            if (rooms.get(i).showRoom().contains(Location) && rooms.get(i).showRoom().contains(Type)) {
+                System.out.println(rooms.get(i).showRoom());
+            }
+        }
+    }
+
+    public void removeRoom(String descrip) {
+        for (int i = 0; i < rooms.size(); i++) {
+            if (rooms.get(i).showRoom() == descrip) {
+                rooms.remove(i);
+                break;
+            }
+        }
+    }
+
+    public void removeFlight(String descrip) {
+        for (int i = 0; i < flights.size(); i++) {
+            if (flights.get(i).showFlight() == descrip) {
+                flights.remove(i);
+                break;
+            }
+        }
+    }
+
+    public void setReservationState(String state) {
+        this.reservationState = state;
+        setChanged();
+        notifyObservers();
+    }
+
+    public String getReservationState() {
+        return reservationState;
+    }
+
+    public void getCustomers() {
+        for (int i = 0; i < customers.size(); i++) {
+            System.out.println(customers.get(i).getName() + " " + customers.get(i).getEmail());
+        }
+    }
+
+    public customer getCustomer(String name, String email) {
+        for (int i = 0; i < customers.size(); i++) {
+           if(customers.get(i).getName() == name && customers.get(i).getEmail() == email){
+               return customers.get(i);
+           }
+        }
+        return null;
+    }
+
+    public void addCustomer(customer c, LocalSystem s) {
+        customers.add(c);
+        this.current_customer = c;
+        setSystem(s);
+    }
+
+    public void setCustomer(customer c) {
+        this.current_customer = c;
+    }
+
+    public void setSystem(LocalSystem s){
+        for(int i = 0; i < customers.size(); i++) {
+            customers.get(i).system = s;
+        }
+    }
+
+}
