@@ -1,6 +1,6 @@
 # Django-webapp 
 
-We create web application in Python using Django framework. The purpose of this project to allow users to book the ticket for airpline and hotel of their choose.
+We create web application in Python using Django framework. The purpose of this project to allow users to book the ticket for flight and hotel of their choices.
 		
 		Chakrya Ros
 
