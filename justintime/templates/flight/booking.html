@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Results</h1>
+<h2>{{ db.first.from_city }}</h2>
+<h2>{{ db.first.to_city }}</h2>
+<h2>{{ db.first.description }}</h2>
+  <table class="table">
+        <tbody>
+            {% for f in db %}
+              <tr>
+                <td>{{f.from_city}}</td>
+                <td>{{f.to_city}}</td>
+                  <td>{{ f.type }}</td>
+                  <td>{{ f.flightName }}</td>
+                  <td> $ {{ f.price }}</td>
+                {% if f.booker %}
+                    <td>reserved</td>
+                {% else %}
+                    <td><a href="/flight/book/{{ f.id }}">Book Now</a></td>
+                {% endif %}
+              </tr>
+            {% endfor %}
+        </tbody>
+  </table>
+    
+
+{% endblock %}

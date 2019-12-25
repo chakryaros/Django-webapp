@@ -3,17 +3,36 @@
 {% block content %}
 
     <div class="search-flight">
-        <form>
-            <h1> Go Anywhere, Anytime </h1>
+         <form action="{% url 'flight:search' %}" method="POST">
+              <h1> Flight </h1>
+            {% csrf_token %}
+            
             <div class="form-box">
-                <input type="text" class="search-field departure" placeholder="Departure">
-                <input type="text" class="search-field return" placeholder="Return">
-                <input type="text" class="search-field depart_time" placeholder="Date: mm/dd/yyyy">
-                <input type="text" class="search-field return_time" placeholder="Date: mm/dd/yyyy">
-                <button class="search-btn" type="button">Search</button>
+                <input id="from_city" type="text" class="search-field stay" name="from_city" placeholder="Depart" >
+                <input id="to_city" type="text" class="search-field checkout" name="to_city" placeholder="Arrival" >
+                {% comment %}<input type="text" class="search-field stay" name="Depart" placeholder="Deaprt">
+                <input type="text" class="search-field checkout" name="Arrival", placeholder="Arrival">{% endcomment %}
+                <button class="search-btn" type="submit">Search</button>
             </div>
         </form>
     </div>
 
+  <table class="table">
+        <tbody>
+            {% for f in db_flight %}
+              <tr>
+                <td>{{f.from_city}}</td>
+                <td>{{f.to_city}}</td>
+                <td>{{f.flightName}}</td>
+                 <td>{{f.seat}}</td>
+                <td><a href="/flight/booking/{{ f.from_city }}/{{ f.to_city }}">Enter</a></td>
+
+              </tr>
+            {% endfor %}
+        </tbody>
+  </table>
+
 {% endblock %}
+
+
 

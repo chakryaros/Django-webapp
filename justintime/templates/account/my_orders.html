@@ -24,6 +24,20 @@
     <br><br><br>
 
     <h2>Flight Orders</h2>
+    <table class="table">
+        <tbody>
+            {% for f in flight_db %}
+              <tr>
+                <td>{{f.from.city}}</td>
+                <td>{{f.to.city}}</td>
+                  <td>{{ f.flightName }}</td>
+                  <td>{{ f.price }}</td>
+                  <td>{{ f.seat }}</td>
+                <td><a href="/flight/cancel/{{ f.id }}">Cancel</a></td>
+              </tr>
+            {% endfor %}
+        </tbody>
+  </table>
 
 
 {% endblock %}
